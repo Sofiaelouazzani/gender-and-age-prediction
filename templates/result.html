@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        {% if result.error %}
+            <p>{{ result.error }}</p>
+        {% else %}
+            <div class="result">
+                <p><strong>Gender:</strong> {{ result.gender }}</p>
+                <p><strong>Age:</strong> {{ result.age }}</p>
+                <h3>Annotated Image:</h3>
+                <img src="{{ url_for('uploaded_file', filename=image_path.split('/')[-1]) }}" alt="Annotated Image">
+            </div>
+        {% endif %}
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+</body>
+</html>
