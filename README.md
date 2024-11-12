@@ -28,64 +28,68 @@ This project is a web application designed to predict gender and age from a prov
    ```bash
    git clone [https://github.com/your-username/gender-and-age-prediction.git](https://github.com/your-username/gender-and-age-prediction.git)
    cd gender-and-age-prediction
-Utilisez ce code avec précaution.
 
 Create a Virtual Environment:
+2. **Create a Virtual Environment:**
 
-Bash
-python3 -m venv myenv
-source myenv/bin/activate  # On Windows, use `myenv\Scripts\activate`
-Utilisez ce code avec précaution.
+    ```bash
+    python3 -m venv myenv
+    source myenv/bin/activate  # On Windows, use `myenv\Scripts\activate`
 
-Install Dependencies:
 
-Bash
-pip install -r requirements.txt   
+3. **Install Dependencies:**
 
-Utilisez ce code avec précaution.
+   ```bash
+   pip install -r requirements.txt   
 
-Add Pre-trained Models:
+4. **Add Pre-trained Models:**
 
 Place the following model files in a models/ directory in the project root:
 
-opencv_face_detector.pbtxt
-opencv_face_detector_uint8.pb
-age_deploy.prototxt
-age_net.caffemodel
-gender_deploy.prototxt
-gender_net.caffemodel   
+* opencv_face_detector.pbtxt
+* opencv_face_detector_uint8.pb
+* age_deploy.prototxt
+* age_net.caffemodel
+* gender_deploy.prototxt
+* gender_net.caffemodel   
+
 Note: Ensure these files are downloaded and placed in the models/ directory as specified in the code.
 
-Running the App
-Start the Flask Server:
+## Running the App
+
+### Start the Flask Server:
 
 For production, use:
 
-Bash
-gunicorn app:app
-Utilisez ce code avec précaution.
+    ```bash
+    gunicorn app:app
+    ```
 
 For development purposes:
 
-Bash
-python app.py
-Utilisez ce code avec précaution.
+    ```bash
+    python app.py
+    ```
 
-Access the Web Application:
+
+## Access the Web Application:
 
 Open your browser and go to:
 
 http://127.0.0.1:5000/
-Deployment
+
+## Deployment
 To deploy this app on platforms like Render, ensure requirements.txt includes all dependencies, including gunicorn. After deploying, set gunicorn as the start command.
 
 Example Render deployment command:
 
-Bash
-gunicorn app:app
-Utilisez ce code avec précaution.
+    ```bash
+    gunicorn app:app
+    ```
 
 File Structure
+
+```bash
 .
 ├── app.py                   # Main Flask application
 ├── templates/
@@ -95,6 +99,9 @@ File Structure
 │   ├── styles.css           # CSS styling for the app
 ├── models/                  # Directory for pre-trained models
 ├── uploads/                 # Folder for uploaded images
+
+```
+
 Enjoy using the Gender and Age Prediction Web App!
 
 
